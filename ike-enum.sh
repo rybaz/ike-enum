@@ -3,6 +3,8 @@
 # generate list of possible transforms
 if [ -f "tranforms_dict.txt" ]
 then
+  printf "[!] Transforms dictionary already exists, skipping...\n"
+else
   printf "[+] Generating list of transforms to test with later...\n"
   for ENC in 1 2 3 4 5 6 7/128 7/192 7/256 8
   do
@@ -17,9 +19,6 @@ then
       done
     done
   done
-
-else
-        printf "[+] Transforms dictionary already exists, skipping...\n"
 fi
 
 # scan everything, get responses in full
